@@ -10,17 +10,15 @@ function Banner() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [trailerUrl, setTrailerUrl] = useState("");
 
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const request = await axios.get(requests.fetchTrending);
-                setMovies(request.data.results);
-            } catch (error) {
-                console.error("Error fetching data: ", error);
-            }
-        }
-        fetchData();
-    }, []);
+useEffect(() => {
+    async function fetchData() {
+        const request = await axios.get(requests.fetchTrending);
+        setMovies(request.data.results);
+    }
+
+    fetchData();
+}, []);
+
 
     useEffect(() => {
         const interval = setInterval(() => {

@@ -14,12 +14,10 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
 
        useEffect(() => {
         async function fetchData() {
-            try {
+         
                 const request = await axios.get(fetchUrl);
                 setMovies(request.data.results.filter(movie => movie.poster_path && movie.backdrop_path));
-            } catch (error) {
-                console.error("Error fetching data: ", error);
-            }
+      
         }
 
         fetchData();

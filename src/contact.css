@@ -1,0 +1,38 @@
+.contact-container {
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+
+.contact-banner {
+    background-image: url(assets/login.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 300px;
+    object-fit: contain;
+    width: 100%;
+    position: relative;
+    top: 0;
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+.contact-container h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    z-index: 1;
+}
+
+.us {
+    background-color: #150142;
+    padding: 30px 20px;
+    border-radius: 5px;
+}
+
+.us p{
+    margin-top: 15px;
+}

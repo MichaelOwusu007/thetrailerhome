@@ -1,0 +1,132 @@
+.aboutmovie-banner {
+    height:100vh;
+    width: 95%;
+    position: relative;
+    color: #fff;
+    border-radius: 10px;
+    margin: auto;
+    overflow:hidden;
+    overflow-x: hidden;
+}
+
+.aboutmovie-banner-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.left-image img{
+    height: 500px;
+    border-radius: 5px;
+    object-fit: cover ;
+    box-shadow: 0 4px 8px rgba(61, 61, 61, 0.1), 0 6px 20px rgba(77, 77, 77, 0.2);
+}
+
+.banner-description {
+    line-height: 1.3rem;
+    padding-top: 2.5rem;
+    max-width: 400px;
+    height: 130px;
+}
+
+.center-content h1{
+    padding-bottom: 0.4rem;
+}
+
+.center-content{
+    height: 300px;
+    display: flex;
+    justify-content:center ;
+    flex-direction: column;
+}
+
+.subtitle-content{
+    margin-top: -5px;
+    
+}
+.subtitle-content .status{
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.HD-button{
+    color:#fff;
+    background: red;
+    font-size: 18px;
+    padding: 7px;
+    border: 0;
+    font-weight: bold;
+}
+
+span{
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+span i{
+    color: red;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.right-content{
+    margin-left: 100px;
+}
+
+
+.download{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    height: 80px;
+    width: 350px;
+    border: 0;
+    max-height: 65px;
+    outline: none;
+    border-radius: 5px;
+    transform: rotate(90deg);
+    white-space: nowrap;
+    
+}
+
+.center-bottom{
+    margin-top:60px;
+    padding:10px 25px;
+    border-radius:5px;
+}
+
+.center-bottom .share-icon{
+    font-size:30px;
+    font-weight:bold;
+    border:2px solid #fff;
+    padding:10px;
+    border-radius:5px;
+    cursor: pointer;
+}
+
+hr{
+    background-color:#fff;
+    border:0;
+    outline:0;
+    height:60px;
+    width:1px;
+    margin-left: 40px;
+}
+
+.language{
+    margin: 0 20px;
+}
+
+.center-bottom-button button{
+    padding: 10px 50px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}

@@ -1,0 +1,106 @@
+.nav{
+    position: fixed ;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 10px;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.nav-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav h3{
+    color:red;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.left-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.left-content .search-input form{
+    border-radius: 5px;
+    width: 400px;
+    margin-left: 120px;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.left-content input{
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    padding: 9px;
+    background: transparent;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    
+}
+
+input:focus{
+    background: #000;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-right: 2px solid white;
+    
+}
+
+.searchit{
+     border-top-right-radius: 5px;
+     border-bottom-right-radius: 5px;
+}
+
+
+::placeholder{
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 1px;
+    
+}
+
+.show {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    background-color: #000;
+}
+
+
+
+@media ( min-width:1024px) {
+
+    .hide{
+        background-color: rgba(255, 255, 255, 0.1);
+        opacity: 0.5;
+    }
+            
+}
+
+.hide {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: visible;
+    backdrop-filter: blur(px);
+
+}
+
+
+

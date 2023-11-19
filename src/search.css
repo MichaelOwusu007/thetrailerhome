@@ -1,0 +1,3 @@
+.display-movies::-webkit-scrollbar {
+            display: none;
+        }

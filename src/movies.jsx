@@ -86,7 +86,7 @@ const handleClick = async (movie) => {
         <button className="btn 4" onClick={() => handleGenreClick(requests.fetchRomanceMovies)}>Romance</button>
       </div>
 
-      <div className='movie-container'>
+      <div className='movie-container cursor-pointer'>
         {loading ? <p className='load'><img src="loading.gif"  className=' bg-transparent w-[150px] ' alt="load" /></p> : movies.map((movie) => (
           <div key={movie.id} className='movie-item' onClick={() => handleClick(movie)}>
             <img src={`http://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />

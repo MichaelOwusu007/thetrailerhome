@@ -26,7 +26,6 @@ function Moviesbanner() {
                     <button className='movie-banner-button' onClick={() => setIsMuted(!isMuted)}>
                         {isMuted ? 'Unmute' : 'Mute'}
                     </button>
-                    <button className='movie-banner-button'>More Info...</button>
                 </div>
                 <h3 className='movie-banner-descriptio text-4xl lg:font-extrabold lg:text-6xl righteous '>Expend4ble</h3>
                 <p className=' font-sans text-[17px] max-w-[450px] mt-3 '>Armed with every weapon they can get their hands on and the skills to use them, The Expendables are the world’s last line of defense and the team that gets called when all other options are off the table. But new team members with new styles and tactics are going to give “new blood” a whole new meaning.</p>

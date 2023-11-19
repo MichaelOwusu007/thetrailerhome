@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { FcGoogle } from "react-icons/fc";
+
 import { ImCross } from "react-icons/im";
 import { initializeApp } from 'firebase/app';
 
@@ -99,7 +99,7 @@ function SignInSignUp() {
                               <hr className='w-[100px] h-[1px] ml-0 ' />
                           </div>
                           <button className=' border w-full justify-center items-center rounded-md bg-[#2221] p-2 flex gap-2 '>
-                              <i><FcGoogle /></i>
+                              
                               The Movie Trailer home
                           </button>         
                           <div className='flex gap-3'>

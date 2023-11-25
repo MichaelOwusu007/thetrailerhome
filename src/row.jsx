@@ -9,7 +9,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
     const [movies, setMovies] = useState([]);
     const [trailerUrl, setTrailerUrl] = useState("");
     const [selectedMovie, setSelectedMovie] = useState(null);
-    const base_url = "http://image.tmdb.org/t/p/original/";
+    const base_url = "http://image.tmdb.org/t/p/original//";
 
 
     useEffect(() => {

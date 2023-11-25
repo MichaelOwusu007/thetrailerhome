@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from "./axios";
 import "./aboutmoviebanner.css";
 import { FiShare2 } from "react-icons/fi";
 import requests from "./requests";
@@ -11,20 +10,26 @@ function AboutMovieBanner() {
     const [trailerUrl, setTrailerUrl] = useState(null);
 
     useEffect(() => {
-        async function fetchData() {
+        const fetchMovieData = async () => {
             try {
-                const request = await axios.get(requests.fetchTrending);
-                const randomMovie =
-                    request.data.results[
-                        Math.floor(Math.random() * request.data.results.length)
-                    ];
+                const timestamp = new Date().getTime();
+                const response = await fetch(`https://api.themoviedb.org/3${requests.fetchTrending}&api_key=13ed1ecfaf93ecd77dad082740d033a2&timestamp=${timestamp}`);
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                const filteredMovies = data.results.filter(movie => movie.poster_path && movie.backdrop_path);
+                const randomMovie = filteredMovies[Math.floor(Math.random() * filteredMovies.length)];
+
                 setMovie(randomMovie);
             } catch (error) {
                 console.error("Error fetching data: ", error);
-                
             }
-        }
-        fetchData();
+        };
+
+        fetchMovieData();
     }, []);
 
     function truncate(string, maxLength) {
@@ -69,7 +74,6 @@ function AboutMovieBanner() {
                     const urlParams = new URLSearchParams(new URL(url).search);
                     setTrailerUrl(urlParams.get("v"));
                 } else {
-                    // Handle case when trailer is not found
                     console.log("Trailer not found for the selected movie.");
                 }
             } catch (error) {
@@ -92,7 +96,7 @@ function AboutMovieBanner() {
                     {/* Left Content */}
                     <div className="left-content">
                         <div className="left-image w-[500px] ml-[150px] hidden xl:block ">
-                            <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path || movie.backdrop_path}`} alt="banner" />
+                            <img src={`https://image.tmdb.org/t/p/original/${movie?.poster_path || movie?.backdrop_path}`} alt="banner" />
                         </div>
                     </div>
                     {/* Center Content */}
@@ -111,7 +115,7 @@ function AboutMovieBanner() {
                             </div>
                             <hr className=' hidden sm:block ' />
                             <h3 className='language hidden sm:block '>{getFullLanguageName(movie.original_language) || 'N/A'}</h3>
-                            
+
                             <div className="center-bottom-button rounded-3xl bg-red-600  ">
                                 <button onClick={handleClick}>Watch</button>
                             </div>
@@ -121,7 +125,7 @@ function AboutMovieBanner() {
                     <div className="right-content hidden lg:block">
                         <a href="/Aboutus">
                             <button className='download bg-white text-black xl:ml-[-80px] '>THE TRAILER HOME</button>
-                            </a>
+                        </a>
                     </div>
                 </div>
             )}
@@ -148,4 +152,5 @@ function AboutMovieBanner() {
 }
 
 export default AboutMovieBanner;
+
 

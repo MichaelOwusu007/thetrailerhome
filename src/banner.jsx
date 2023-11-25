@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from "./axios";
 import "./banner.css";
 import requests from "./requests";
 import YouTube from 'react-youtube';
@@ -10,15 +9,26 @@ function Banner() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [trailerUrl, setTrailerUrl] = useState("");
 
-useEffect(() => {
-    async function fetchData() {
-        const request = await axios.get(requests.fetchTrending);
-        setMovies(request.data.results);
-    }
+    useEffect(() => {
+        const fetchMoviesData = async () => {
+            try {
+                const timestamp = new Date().getTime();
+                const response = await fetch(`https://api.themoviedb.org/3${requests.fetchTrending}&api_key=13ed1ecfaf93ecd77dad082740d033a2&timestamp=${timestamp}`);
 
-    fetchData();
-}, []);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
 
+                const data = await response.json();
+                const filteredMovies = data.results.filter(movie => movie.backdrop_path);
+                setMovies(filteredMovies);
+            } catch (error) {
+                console.error('Error fetching movies:', error);
+            }
+        };
+
+        fetchMoviesData();
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -54,7 +64,7 @@ useEffect(() => {
         }
     };
 
-        const handleMoreInfoClick = async () => {
+    const handleMoreInfoClick = async () => {
         try {
             const movieName = currentMovie?.title || currentMovie?.name || currentMovie?.original_name || "";
             const url = await movieTrailer(movieName);
@@ -68,7 +78,6 @@ useEffect(() => {
         } catch (error) {
             console.error("Error fetching trailer: ", error);
         }
-        
     };
 
     const opts = {
@@ -106,7 +115,6 @@ useEffect(() => {
                     <div className="modal-video w-[1200px]  relative bg-black mb-2 mt-2">
                         <YouTube videoId={trailerUrl} opts={opts} />
                         <div className="close-button absolute w-[70px] top-[20px] right-[180px] cursor-pointer text-white  bg-blue-500 rounded px-3 py-1  font-bold " onClick={() => { setTrailerUrl(""); document.body.classList.remove("modal-open"); }}>Close</div>
-                       
                     </div>
                 </div>
             )}
@@ -115,5 +123,6 @@ useEffect(() => {
 }
 
 export default Banner;
+
 
 

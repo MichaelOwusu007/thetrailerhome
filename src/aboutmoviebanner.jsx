@@ -92,7 +92,7 @@ function AboutMovieBanner() {
                     {/* Left Content */}
                     <div className="left-content">
                         <div className="left-image w-[500px] ml-[150px] hidden xl:block ">
-                            <img src={`https://image.tmdb.org/t/p/original/${movie?.poster_path || movie?.backdrop_path}`} alt="banner" />
+                            <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path || movie.backdrop_path}`} alt="banner" />
                         </div>
                     </div>
                     {/* Center Content */}

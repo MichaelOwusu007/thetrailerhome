@@ -10,14 +10,14 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
     const [trailerUrl, setTrailerUrl] = useState("");
     const [selectedMovie, setSelectedMovie] = useState(null);
     const base_url = "http://image.tmdb.org/t/p/original/";
-    
 
-       useEffect(() => {
+
+    useEffect(() => {
         async function fetchData() {
-         
-                const request = await axios.get(fetchUrl);
-                setMovies(request.data.results.filter(movie => movie.poster_path && movie.backdrop_path));
-      
+
+            const request = await axios.get(fetchUrl);
+            setMovies(request.data.results.filter(movie => movie.poster_path && movie.backdrop_path));
+
         }
 
         fetchData();
@@ -27,32 +27,32 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
         height: "500",
         width: "100%",
         playerVars: { // https://developers.google.com/youtube/player_parameters
-        autoplay: 1,
+            autoplay: 1,
         },
     };
 
-const handleClick = async (movie) => {
-    if (trailerUrl) {
-        setTrailerUrl('');
-    } else {
-        try {
-            const movieName = movie?.title || movie?.name || movie?.original_name || "";
-            const url = await movieTrailer(movieName);
-            if (url) {
-                const urlParams = new URLSearchParams(new URL(url).search);
-                setTrailerUrl(urlParams.get("v"));
-                setSelectedMovie(movie);
-            } else {
-                // Handle case when trailer is not found
-                console.log("Trailer not found for the selected movie.");
+    const handleClick = async (movie) => {
+        if (trailerUrl) {
+            setTrailerUrl('');
+        } else {
+            try {
+                const movieName = movie?.title || movie?.name || movie?.original_name || "";
+                const url = await movieTrailer(movieName);
+                if (url) {
+                    const urlParams = new URLSearchParams(new URL(url).search);
+                    setTrailerUrl(urlParams.get("v"));
+                    setSelectedMovie(movie);
+                } else {
+                    // Handle case when trailer is not found
+                    console.log("Trailer not found for the selected movie.");
+                }
+            } catch (error) {
+                console.error("Error fetching trailer: ", error);
             }
-        } catch (error) {
-            console.error("Error fetching trailer: ", error);
         }
-    }
 
-   
-};
+
+    };
 
 
     return (
@@ -62,29 +62,29 @@ const handleClick = async (movie) => {
                 {movies.map(movie => (
                     movie.poster_path && (
                         <div className='image-background' key={movie.id} onClick={() => handleClick(movie)}>
-                          {movie.poster_path ? (
-                            <img
-                                className={`row_poster ${isLargeRow && "row_posterLarge"}`}
-                                src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
-                                alt={movie.name || movie.title}
-                            />
-                        ) : (
-                            <img
-                                className={`row_poster ${isLargeRow && "row_posterLarge"}`}
-                                src="/no_preview.jpg" // Path to your fallback image
-                                alt="No Review"
-                            />
-                        )}
+                            {movie.poster_path ? (
+                                <img
+                                    className={`row_poster ${isLargeRow && "row_posterLarge"}`}
+                                    src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+                                    alt={movie.name || movie.title}
+                                />
+                            ) : (
+                                <img
+                                    className={`row_poster ${isLargeRow && "row_posterLarge"}`}
+                                    src="/no_preview.jpg" // Path to your fallback image
+                                    alt="No Review"
+                                />
+                            )}
                             <div className="row-content">
-                        <h2 className='row-title'>{movie?.title || movie?.name || movie?.original_name}</h2>
-                                
+                                <h2 className='row-title'>{movie?.title || movie?.name || movie?.original_name}</h2>
+
                             </div>
-                    </div>
+                        </div>
                     )
                 ))}
             </div>
 
-                    {trailerUrl && setSelectedMovie && (
+            {trailerUrl && setSelectedMovie && (
                 <div className="modal-background fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 bg-[rgba(0,0,0,0.6)] ">
                     <div className="modal-video w-[1200px] lg:h-[720px] relative bg-black mb-2 mt-2">
                         <YouTube videoId={trailerUrl} opts={opts} />
@@ -99,9 +99,9 @@ const handleClick = async (movie) => {
                     </div>
                 </div>
             )}
-      
+
         </div>
-            
+
     );
 }
 

@@ -53,6 +53,15 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
                 console.error("Error fetching trailer: ", error);
             }
         }
+
+    }
+
+    function truncate(string, n) {
+        return string?.length > n ? string.substring(0, n - 1) + '...' : string;
+    }
+
+    const truncateTitle = (string) => {
+        return truncate(string, 50);
     };
 
     return (
@@ -76,7 +85,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
                                 />
                             )}
                             <div className="row-content">
-                                <h2 className='row-title'>{movie?.title || movie?.name || movie?.original_name}</h2>
+                                <h2 className='row-title'>{truncateTitle(movie?.title || movie?.name || movie?.original_name)}</h2>
                             </div>
                         </div>
                     )

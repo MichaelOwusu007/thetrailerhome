@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './movies.css';
-import Footer from './footer';
-import MoviesBanner from './moviesbanner';
-import requests from './requests';
-import { getRandomMovies } from './movieUtils';
+import Footer from '../Components/footer';
+import MoviesBanner from '../Components/moviesbanner';
+import requests from '../Components/requests';
+import { getRandomMovies } from '../util/movieUtils';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 

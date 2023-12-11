@@ -1,14 +1,14 @@
-.contact-container {
+.aboutus-container{
     color: #fff;
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
 }
 
-.contact-banner {
-    background-image: url(assets/login.jpg);
+.header-banner{
+    background-image: url(../assets/login.jpg);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size:cover;
     height: 300px;
     object-fit: contain;
     width: 100%;
@@ -18,7 +18,7 @@
     transition: all 0.5s ease;
 }
 
-.contact-container h1 {
+.aboutus-container h1{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -27,12 +27,23 @@
     z-index: 1;
 }
 
-.us {
-    background-color: #150142;
-    padding: 30px 20px;
-    border-radius: 5px;
+
+.aboutus-image{
+    height: 600px;
+    width: 700px;
+    border-radius: 10px;
 }
 
-.us p{
-    margin-top: 15px;
+
+
+.about-rate-left, .about-rate-right{
+    background-color:#000001;
+    padding:25px;
 }
+
+.about-rate-left p,.about-rate-right p{
+    line-height: 1.2rem;
+    margin-top: 15px;
+
+}
+

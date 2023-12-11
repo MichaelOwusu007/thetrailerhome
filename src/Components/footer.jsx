@@ -33,7 +33,7 @@ function footer() {
         </section>
         <section className='flex flex-col lg:text-lg'>
           <div className='lg:mx-auto lg:w-[200px] '>
-            <h3 className='text-xl font-medium uppercase tracking-wider text-pink-600'>trailer home</h3>
+            <h3 className='text-xl font-medium uppercase tracking-wider text-pink-600'>short links</h3>
             <div className='mt-4 flex flex-col gap-3 capitalize'>
               <a href='/'>Trending Movies</a>
               <a href='/'>Action Movies</a>

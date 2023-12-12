@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import "./aboutmoviebanner.css";
+import "./AboutMovieBanner.css";
 import { FiShare2 } from "react-icons/fi";
-import requests from "./requests";
+import requests from "../util/requests";
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 

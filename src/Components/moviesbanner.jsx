@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import "./moviesbanner.css";
+import "./MoviesBanner.css";
 
 
 function Moviesbanner() {

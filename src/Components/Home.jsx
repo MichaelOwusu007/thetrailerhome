@@ -1,9 +1,9 @@
 import React from 'react';
-import Banner from './banner';
-import requests from './requests';
-import Row from './row';
-import Aboutmoviebanner from './aboutmoviebanner';
-import Footer from './footer';
+import Banner from './Banner';
+import requests from '../util/requests';
+import Row from './Row';
+import AboutMovieBanner from './AboutMovieBanner';
+import Footer from './Footer';
 
 
 
@@ -24,7 +24,7 @@ function Home() {
                 <Row title="Netflix Originals" fetchUrl={requests.fetchNetflixOriginals} />
                 <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
 
-                <Aboutmoviebanner />
+                <AboutMovieBanner />
 
                 <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
                 <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />

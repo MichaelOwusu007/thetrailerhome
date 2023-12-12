@@ -1,4 +1,4 @@
-import requests from '../Components/requests';
+import requests from './requests';
 
 const genres = [
   requests.fetchTrending,

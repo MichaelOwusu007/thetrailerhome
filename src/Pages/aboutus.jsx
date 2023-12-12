@@ -1,7 +1,7 @@
 import React from 'react';
-import "./aboutus.css";
+import "./AboutUs.css";
 import Home from "../assets/home.jpg";
-import Footer from '../Components/footer';
+import Footer from '../components/Footer';
 
 function about() {
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./row.css";
+import "./Row.css";
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 

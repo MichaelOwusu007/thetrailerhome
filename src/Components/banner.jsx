@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import "./banner.css";
-import requests from "./requests";
+import "./Banner.css";
+import requests from "../util/requests";
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 

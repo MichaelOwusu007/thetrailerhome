@@ -1,12 +1,12 @@
 
 import React, { useState } from 'react';
-import Home from "./Components/Home";
-import "./Styles/App.css";
-import Contact from "./Pages/contact";
-import Aboutus from "./Pages/aboutus";
-import Movies from "./Pages/movies";
-import Navbar from './Components/Navbar';
-import Search from './Components/search';
+import Home from "./components/Home";
+import "./styles/App.css";
+import Contact from "./pages/Contact";
+import Aboutus from "./pages/AboutUs";
+import Movies from "./pages/Movies";
+import Navbar from './components/Navbar';
+import Search from './components/Search';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {

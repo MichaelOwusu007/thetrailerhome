@@ -1,5 +1,5 @@
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
-import './search.css';
+import './Search.css';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import YouTube from 'react-youtube';

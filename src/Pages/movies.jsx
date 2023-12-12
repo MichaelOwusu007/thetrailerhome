@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './movies.css';
-import Footer from '../Components/footer';
-import MoviesBanner from '../Components/moviesbanner';
-import requests from '../Components/requests';
+import './Movies.css';
+import Footerside from '../components/Footer';
+import MoviesBanner from '../components/MoviesBanner';
+import requests from '../util/requests';
 import { getRandomMovies } from '../util/movieUtils';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
@@ -105,7 +105,7 @@ const handleClick = async (movie) => {
       </div>
     )}
 
-      <Footer />
+      <Footerside />
     </div>
   );
 }

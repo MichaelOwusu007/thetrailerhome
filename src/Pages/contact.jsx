@@ -12,7 +12,7 @@ function contact() {
       
        <div className="contact-form grid  gap-6 lg:my-20 my-10 lg:grid-cols-3 xl:gap-8 leading-8 px-4 text-[16px] ">
            <div className="Email us">
-              <h2 className='font-bold text-[20px] '>Email us:</h2>
+              <h2 className='font-bold text-[20px] '>Email us on:</h2>
               <h3>nanayawwiafe007@gmail.com</h3>
               <p>You can also send us an e-mail today and we will surely get you sorted out.</p>
         </div>

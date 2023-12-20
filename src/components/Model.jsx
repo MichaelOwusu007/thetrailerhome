@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../util/firebase'; // Import firebaseApp from your firebase.js file
+import { auth } from '../util/firebase'; 
 import { ImCross } from 'react-icons/im';
 
 function SignInSignUp() {
@@ -8,7 +8,7 @@ function SignInSignUp() {
   const passwordRef = useRef(null);
   const [isModalVisible, setIsModalVisible] = useState(true);
 
-  const authInstance = auth; // Use auth method from firebaseApp
+  const authInstance = auth; 
 
   const register = (e) => {
     e.preventDefault();

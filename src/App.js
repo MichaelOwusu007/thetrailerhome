@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   const [searchResults, setSearchResults] = useState([]);
 
-  // This function will be used to update searchResults in App component
+  
   const updateSearchResults = (results) => {
     setSearchResults(results);
   };

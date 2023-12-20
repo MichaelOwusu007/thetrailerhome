@@ -1,0 +1,38 @@
+.banner{
+    height: 550px;
+    width: 100vw;
+    position: relative;
+    object-fit:contain;
+    color: #fff;
+    overflow-x: hidden;
+}
+.banner-content{
+    
+    padding-top: 160px;
+    position: absolute;
+
+}
+
+.banner-title{
+    font-weight: 700;
+    padding-bottom: 0.3rem;
+}
+
+
+
+.banner-button{
+    color: #fff;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    font-weight: bold;
+    border-radius: 0.2vw;
+    margin-right: 20px;
+    background-color: rgba(15, 15, 15, 0.5);
+}
+
+.banner-button:hover{
+    color: #000;
+    background-color: aliceblue;
+    transition: all 0.2s;
+}
